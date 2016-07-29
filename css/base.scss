@@ -1,0 +1,122 @@
+*{
+	margin:0;
+	padding: 0;
+	list-style:none;
+	text-decoration: none;
+	position: relative;
+}
+body{
+	font-size: 16px;
+	font-family: "微软雅黑","Helvetica Neue","sanFrancisco Display";
+}
+@mixin c-align{
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+@mixin v-align{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+@mixin juzhong{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+@mixin cube($size){
+	width: $size;
+	height: $size;
+}
+
+%clear{
+	content:"";
+	display:block;
+	clear:both;
+	line-height: 0;
+	height: 0;
+}
+.clear::after{
+	@extend %clear;
+}
+.row{
+	@extend %clear;
+}
+.col{
+	float: left;
+}
+$number:12;
+@for $i from 1 through $number {
+	.col.l#{$i}{
+		width:percentage($i/$number);
+	}
+}
+@for $i from 1 through $number {
+	.col.m#{$i}{
+		width:percentage($i/$number);
+	}
+}
+@for $i from 1 through $number {
+	.col.s#{$i}{
+		width:percentage($i/$number);
+	}
+}
+$max-size:3000px;
+$medium-size:1068px;
+$bag-size:1270px;
+$small-size:768px;
+$min-size:430px;
+@mixin onl{
+	@media screen and (max-width: $max-size){
+		@content;
+	}
+}
+@mixin onm{
+	@media screen and (max-width: $medium-size){
+		@content;
+	}
+}
+@mixin onbag{
+	@media screen and (max-width: $bag-size){
+		@content;
+	}
+}
+@mixin ons{
+	@media screen and (max-width: $small-size){
+		@content;
+	}
+}
+@mixin onmin{
+	@media screen and (max-width: $min-size){
+		@content;
+	}
+}
+@font-face{
+	font-family: "zhengchang";
+	src:url("../fonts/myriad-set-pro_text.woff") format("woff");
+}
+@font-face{
+	font-family: "bold";
+	src:url("../fonts/myriad-set-pro_semibold.woff") format("woff");
+}
+@font-face{
+	font-family: "xi";
+	src:url("../fonts/myriad-set-pro_thin.woff") format("woff");
+}
+@font-face{
+	font-family: "jixi";
+	src:url("../fonts/myriad-set-pro_extrathin.woff") format("woff");
+}
+@font-face{
+	font-family: "iconfont";
+	src:url("../fonts/iconfont.woff") format("woff");
+}
+@font-face {
+	font-family: "icon";
+  	src: url('../fonts/iconfont1.woff') format('woff');
+}
