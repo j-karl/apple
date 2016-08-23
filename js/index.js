@@ -60,7 +60,6 @@ $(function(){
 	var list = $('li',$('.lunbo'));
 	var btnL = $('.move-left');
 	var btnR = $('.move-right');
-	// var container = $('.banner');
 	var flag = false;
 
 	move = function(n,dir){
