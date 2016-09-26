@@ -115,12 +115,15 @@ $(function(){
 		var next = items.eq($(this).index());
 		move(next,dir);
 	});
+	
 	var t = setInterval(function(){
 		btnR.trigger('click');
 	},3000);
+
 	$('.container').on('mouseenter',function(){
 		clearInterval(t);
 	});
+
 	$('.container').on('mouseleave',function(){
 		t = setInterval(function(){
 			btnR.trigger('click');
